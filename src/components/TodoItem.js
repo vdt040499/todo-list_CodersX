@@ -1,12 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class TodoItem extends Component {
+class TodoItem extends React.Component {
     render() {
-        return(
-            <div className="TodoItem">
-                <p>{this.props.title}</p>
-            </div>
-        );
+        return <p>{this.props.title}</p>
     }
 }
 
