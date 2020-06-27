@@ -5,14 +5,20 @@ class App extends React.Component {
 
   constructor() {
     super();
-    this.toDoItems = ['Eat', 'Sleep', 'Code'];
+    this.toDoItems = [
+      { title: 'Mua sì nách', isComplete: true },
+      { title: 'Đi đá bóng' },
+      { title: 'Đi đổ xăng' }
+    ];
   }
 
   render() {
     return (
       <div className="App">
           {
-            this.toDoItems.map((item, index) => <TodoItem key={index} title={item} />)
+            this.toDoItems.map((item, index) => 
+              <TodoItem key={index} item={item} />
+            )
           }
       </div>
     );
