@@ -7,7 +7,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      newItem: '',
+      // newItem: '',
       toDoItems: [
         { title: 'Mua sì nách', isComplete: true },
         { title: 'Đi đá bóng', isComplete: false },
@@ -16,7 +16,7 @@ class App extends React.Component {
     }
 
     this.onKeyUp = this.onKeyUp.bind(this); 
-    this.onChange = this.onChange.bind(this);
+    // this.onChange = this.onChange.bind(this);
   }
 
   onItemClicked(item) {
@@ -61,17 +61,19 @@ class App extends React.Component {
           ...this.state.toDoItems
         ]
       });
+      event.target.value = '';
     }
   }
 
-  onChange(event) {
-    this.setState({
-      newItem: event.target.value
-    });
-  }
+  // onChange(event) {
+  //   this.setState({
+  //     newItem: event.target.value
+  //   });
+  // }
 
   render() {
-    const { toDoItems, newItem } = this.state;
+    // const { toDoItems, newItem } = this.state;
+    const { toDoItems } = this.state;
     return(
       <div className="App" >
         <div className="Header">
@@ -79,8 +81,8 @@ class App extends React.Component {
           <input 
             type="text" 
             placeholder="Add a new item" 
-            value={newItem}
-            onChange={this.onChange}
+            // value={newItem}
+            // onChange={this.onChange}
             onKeyUp={this.onKeyUp}
           ></input>
         </div>
